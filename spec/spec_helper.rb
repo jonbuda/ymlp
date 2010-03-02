@@ -17,8 +17,7 @@ def fixture_file(filename)
 end
  
 def ymlp_base_url(url = "/")
-  url = "https://www.ymlp.com/api#{url}"
-  Regexp.new(Regexp.escape(url))
+  Regexp.new(Regexp.escape("https://www.ymlp.com/api#{url}"))
 end
  
 def stub_get(url, filename)

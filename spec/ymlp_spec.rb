@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "YMLP" do
-  before(:each) do
+  before(:all) do
     @ymlp = YMLP.new('login', 'API KEY')
   end
   

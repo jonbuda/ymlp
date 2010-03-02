@@ -1,6 +1,8 @@
-= ymlp
+= A Simple Ruby library for the YMLP (YourMailingListProvider) API
 
-Description goes here.
+YMLP is a simple Ruby library for interacting with the API provided by {YourMailingListProvider.com}[http://yourmailinglistprovider.com] enabling you to modifying mailing lists and contacts.
+
+YMLP uses the excellent {HTTParty}[http://github.com/jnunemaker/httparty] gem.
 
 == Note on Patches/Pull Requests
  
