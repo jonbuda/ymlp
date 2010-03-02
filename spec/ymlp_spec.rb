@@ -1,7 +1,17 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe "Ymlp" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
+describe "YMLP" do
+  before(:each) do
+    @ymlp = YMLP.new('login', 'API KEY')
   end
+  
+  context "Ping" do
+    it "should have a successful response" do
+      stub_post('/Ping', 'ping.json')
+      @ymlp.ping['Output'].should == "Hello!"
+    end
+  end
+  
+  
+
 end

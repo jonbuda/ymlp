@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ymlp"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Ruby library for the YMLP (YourMailingListProvider) API}
+    gem.description = %Q{Ruby library for the YMLP (YourMailingListProvider) API}
     gem.email = "jon.buda@gmail.com"
     gem.homepage = "http://github.com/jonbuda/ymlp"
     gem.authors = ["Jon Buda"]
