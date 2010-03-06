@@ -19,6 +19,14 @@ end
 def ymlp_base_url(url = "/")
   Regexp.new(Regexp.escape("https://www.ymlp.com/api#{url}"))
 end
+
+def stub_request(url, filename)
+ FakeWeb.register_uri(:any, ymlp_base_url(url), :body => fixture_file(filename), :content_type => 'application/json')
+end
+
+def stub_invalid_login
+  FakeWeb.register_uri(:any, 'https://www.ymlp.com/api/Ping?Output=JSON&Username=login&Key=API_KEY', :body => fixture_file('invalid_api_key.json'), :content_type => 'application/json')
+end
  
 def stub_get(url, filename)
   # FIXME: We have to specify content type, otherwise HTTParty will not parse the 
@@ -27,10 +35,7 @@ def stub_get(url, filename)
   options = { :body => fixture_file(filename), :content_type => 'application/json' }
   FakeWeb.register_uri(:get, ymlp_base_url(url), options)
 end
- 
-def stub_post(url, filename)
-  FakeWeb.register_uri(:post, ymlp_base_url(url), :body => fixture_file(filename), :content_type => 'application/json')
-end
+
 
 
 Spec::Runner.configure do |config|

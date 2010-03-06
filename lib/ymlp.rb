@@ -45,10 +45,10 @@ class YMLP
   private
     
   def request(command, query = {}, method = :get)
-    result = self.class.post(command, :query => @base_options.merge(query))
-        
-    if result.is_a?(Hash) && result.has_key?('Result')
-      raise(result['Result']['Output']) unless result['Result']['Code'] == 0    
+    result = self.class.get(command, :query => @base_options.merge(query))
+
+    if result.is_a?(Hash)
+      raise(result['Output']) unless result['Code'].to_i == 0    
     end
     
     result
